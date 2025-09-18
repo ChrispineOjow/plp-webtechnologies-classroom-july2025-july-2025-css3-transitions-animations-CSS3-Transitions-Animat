@@ -1,0 +1,55 @@
+ body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    background: #f0f3f5;
+  }
+  
+  /* Part 1: Button hover transition */
+  button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
+    margin-bottom: 30px;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+  }
+  
+  /* Box to animate */
+  .box {
+    width: 150px;
+    height: 150px;
+    background-color: coral;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 127, 80, 0.6);
+    /* Initial state */
+    transform: translateX(0) rotate(0deg);
+    transition: transform 0.6s ease;
+  }
+  
+  /* Animated state triggered by JS */
+  .box.active {
+    transform: translateX(220px) rotate(20deg);
+  }
+  
+  /* Keyframe for continuous pulse animation */
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 10px #e74c3c; }
+    50% { box-shadow: 0 0 30px #e74c3c; }
+  }
+  
+  /* Pulse animation triggered by JS */
+  .box.pulse {
+    animation: pulse 2s infinite;
+  }
